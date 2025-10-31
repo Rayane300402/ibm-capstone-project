@@ -1,0 +1,180 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    /* navbar override to match screenshot */
+    .navbar-custom {
+      background-color: #00bcd4; /* teal-ish bar */
+      min-height: 1in;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-custom .nav-link {
+      font-size: larger;
+      color: #000 !important;
+      font-weight: 500;
+    }
+
+    .navbar-custom .nav-link.active {
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .navbar-brand-custom {
+      color: #000;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding-right: 2rem;
+    }
+
+    /* outer contact card */
+    .contact-card-outer {
+      width: 70%;
+      max-width: 900px;
+      background: #ffffff;
+      border: 1px solid #999;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      margin: 3rem auto;
+      padding: 1.5rem 2rem;
+    }
+
+    /* dealership image at top of card */
+    .dealership-photo {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      object-fit: cover;
+      max-height: 220px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* flex row for icon + text */
+    .contact-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-icon-block {
+      flex: 0 0 120px;
+      text-align: center;
+    }
+
+    .contact-icon-block img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .contact-info-block {
+      flex: 1 1 250px;
+      font-size: 0.95rem;
+      line-height: 1.4rem;
+      color: #000;
+    }
+
+    .contact-info-block p {
+      margin: 0.3rem 0;
+    }
+
+    .contact-info-block .section-head {
+      font-weight: 600;
+      margin-top: 0.7rem;
+    }
+
+    @media(max-width: 600px) {
+      .contact-card-outer {
+        width: 90%;
+        padding: 1rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid" style="padding-left: 1rem; padding-right: 1rem;">
+      <span class="navbar-brand-custom">Dealerships</span>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="/contact">Contact Us</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTACT CARD -->
+  <div class="contact-card-outer">
+
+    <!-- dealership photo -->
+    <img
+      class="dealership-photo"
+      src="https://images.unsplash.com/photo-1583267746897-9c341bd6be63?auto=format&fit=crop&w=1200&q=80"
+      alt="Dealership showroom"
+    />
+
+    <!-- icon + info row -->
+    <div class="contact-row">
+
+      <!-- headset / support icon -->
+      <div class="contact-icon-block">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/5971/5971687.png"
+          alt="Support icon"
+        />
+      </div>
+
+      <!-- contact info text -->
+      <div class="contact-info-block">
+        <p class="section-head">Contact Customer Service</p>
+        <p>support@bestcars.com</p>
+
+        <p class="section-head">Contact our National Advertising team</p>
+        <p>NationalSales@bestcars.com</p>
+
+        <p class="section-head">Contact our Public Relations team</p>
+        <p>PR@bestcars.com</p>
+
+        <p class="section-head">Contact the bestcars.com offices</p>
+        <p>312-671-1111</p>
+
+        <p class="section-head">Become a bestcars.com car dealer</p>
+        <p>Visit growth@bestcars.com</p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
