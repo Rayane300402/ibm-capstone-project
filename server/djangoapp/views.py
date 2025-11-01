@@ -1,6 +1,6 @@
 import json
 import logging
-from datetime import datetime  # remove if truly unused
+
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
 from django.http import JsonResponse
@@ -160,14 +160,13 @@ def get_dealer_details(request, dealer_id):
 
 
 def add_review(request):
-    # `request.user.is_anonymous == False` triggered E712
-    # Rewrite as `if not request.user.is_anonymous:`
+    # Avoid `== False` (E712)
     if not request.user.is_anonymous:
         data = json.loads(request.body)
         try:
-            api_response = post_review(data)
-            # We don't currently use api_response, which caused F841.
-            # If we don't need it, don't assign it.
+            # We call post_review but don't assign it,
+            # so we don't trigger F841.
+            post_review(data)
             return JsonResponse({"status": 200})
         except Exception:
             return JsonResponse(
